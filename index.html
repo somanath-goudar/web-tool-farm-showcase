@@ -3,585 +3,919 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Tool Farm — 20 No-API Tools, Built to Rank & Flip</title>
-<meta name="description" content="A collection of free, no-API web tools targeting high-volume search queries. Covering India-focused and global audiences. Built to rank organically and flip on Flippa.">
-
+<title>20 SEO Web Tools For Sale — No-API, Live on Vercel, Ready to Monetise</title>
+<meta name="description" content="Portfolio of 20 no-API web tools targeting high-volume search queries. Each tool is live, SEO-ready from day one, and costs $0/month to host. Individual or bundle sale.">
 <style>
 :root {
-  --bg: #0D1117;
-  --surface: #161B22;
-  --border: #30363D;
-  --text: #E6EDF3;
-  --muted: #8B949E;
-  --india: #FF9933;
+  --bg: #08090e;
+  --surface: #0f1117;
+  --surface2: #161921;
+  --surface3: #1e2130;
+  --border: #232840;
+  --border2: #2e3350;
+  --green: #22c55e;
+  --green-bg: rgba(34,197,94,0.08);
+  --green-border: rgba(34,197,94,0.25);
+  --gold: #f59e0b;
+  --gold-bg: rgba(245,158,11,0.08);
+  --gold-border: rgba(245,158,11,0.25);
+  --blue: #60a5fa;
+  --blue-bg: rgba(96,165,250,0.08);
+  --blue-border: rgba(96,165,250,0.22);
+  --india: #ff9933;
   --india-bg: rgba(255,153,51,0.08);
   --india-border: rgba(255,153,51,0.25);
-  --global: #58A6FF;
-  --global-bg: rgba(88,166,255,0.08);
-  --global-border: rgba(88,166,255,0.25);
-  --green: #3FB950;
-  --gold: #D4A017;
-  --card-hover: #1C2128;
+  --text: #f1f5f9;
+  --text2: #cbd5e1;
+  --muted: #64748b;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
 
-/* HERO */
-.hero {
-  background: linear-gradient(160deg, #0D1117 0%, #161B22 50%, #0D1117 100%);
+/* ── NAV ───────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,9,14,0.92); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 4rem 1.5rem 3rem;
+  padding: 0.85rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.nav-logo { font-weight: 800; font-size: 0.95rem; color: var(--text); }
+.nav-logo span { color: var(--green); }
+.nav-links { display: flex; gap: 1.25rem; margin-left: auto; }
+.nav-links a { font-size: 0.85rem; color: var(--muted); font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--green); color: #000; font-weight: 700; font-size: 0.82rem;
+  padding: 0.45rem 1.1rem; border-radius: 6px; transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.88; color: #000; }
+
+/* ── HERO ──────────────────────────────────────────── */
+.hero {
+  padding: 5rem 1.5rem 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 .hero::before {
   content: '';
-  position: absolute;
-  top: -60px; left: 50%;
-  transform: translateX(-50%);
-  width: 600px; height: 300px;
-  background: radial-gradient(ellipse, rgba(88,166,255,0.06) 0%, transparent 70%);
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 800px 400px at 50% -50px, rgba(34,197,94,0.07), transparent);
   pointer-events: none;
 }
-.hero-tag {
-  display: inline-block;
-  background: rgba(63,185,80,0.15);
-  border: 1px solid rgba(63,185,80,0.35);
-  color: var(--green);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 0.25rem 0.85rem;
-  border-radius: 20px;
-  margin-bottom: 1.2rem;
-  text-transform: uppercase;
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--green-bg); border: 1px solid var(--green-border);
+  color: var(--green); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 0.3rem 1rem; border-radius: 20px;
+  margin-bottom: 1.75rem;
 }
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 900;
-  letter-spacing: -1px;
-  line-height: 1.1;
-  margin-bottom: 1rem;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 900; letter-spacing: -1.5px; line-height: 1.08;
+  margin-bottom: 1.25rem; max-width: 800px; margin-left: auto; margin-right: auto;
 }
-.hero h1 .accent { color: var(--global); }
-.hero h1 .accent-india { color: var(--india); }
+.hero h1 .g { color: var(--green); }
+.hero h1 .go { color: var(--gold); }
 .hero-sub {
-  font-size: 1.05rem;
-  color: var(--muted);
-  max-width: 560px;
-  margin: 0 auto 2rem;
+  font-size: 1.1rem; color: var(--text2);
+  max-width: 580px; margin: 0 auto 2.5rem; line-height: 1.65;
 }
+.hero-actions {
+  display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+.btn-primary {
+  background: var(--green); color: #000; font-weight: 700; font-size: 0.95rem;
+  padding: 0.8rem 1.8rem; border-radius: var(--radius-sm); transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { opacity: 0.88; color: #000; }
+.btn-secondary {
+  background: var(--surface2); border: 1px solid var(--border2); color: var(--text2);
+  font-weight: 600; font-size: 0.95rem; padding: 0.8rem 1.8rem;
+  border-radius: var(--radius-sm); transition: border-color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--muted); color: var(--text); }
 
-/* STATS */
-.stats-row {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+/* ── PORTFOLIO STATS ───────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; max-width: 900px; margin: 0 auto;
+}
+.stat-cell {
+  background: var(--surface); padding: 1.75rem 1.5rem;
+  text-align: center;
+}
+.stat-num {
+  font-size: 2.4rem; font-weight: 900; line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.stat-num.green { color: var(--green); }
+.stat-num.gold { color: var(--gold); }
+.stat-num.blue { color: var(--blue); }
+.stat-label { font-size: 0.78rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ── SECTION WRAPPER ───────────────────────────────── */
+.section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+.section-sm { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--muted); margin-bottom: 1rem;
+}
+.section-label::before { content: '—'; }
+h2.section-heading {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px;
+  line-height: 1.15; margin-bottom: 0.75rem;
+}
+h2.section-heading .g { color: var(--green); }
+h2.section-heading .go { color: var(--gold); }
+.section-body { font-size: 1rem; color: var(--text2); max-width: 620px; line-height: 1.7; }
+
+/* ── MOAT LIST ─────────────────────────────────────── */
+.moat-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem; margin-top: 2.5rem;
+}
+.moat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.4rem;
+}
+.moat-icon { font-size: 1.5rem; margin-bottom: 0.65rem; }
+.moat-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.35rem; }
+.moat-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+/* ── MATH BOX ──────────────────────────────────────── */
+.math-box {
+  background: var(--surface); border: 1px solid var(--gold-border);
+  border-radius: var(--radius); padding: 2rem; position: relative; overflow: hidden;
+}
+.math-box::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--green));
+}
+.math-row {
+  display: flex; gap: 0.5rem; align-items: flex-start;
+  padding: 0.85rem 0; border-bottom: 1px solid var(--border);
+  font-size: 0.93rem;
+}
+.math-row:last-child { border-bottom: none; }
+.math-row .label { color: var(--muted); min-width: 200px; flex-shrink: 0; }
+.math-row .value { font-weight: 700; color: var(--text); }
+.math-row .value.green { color: var(--green); font-size: 1.1rem; }
+.math-row .value.gold { color: var(--gold); }
+.math-eq { font-size: 0.78rem; color: var(--muted); margin-left: 0.5rem; align-self: center; }
+
+/* ── TOOL GRID ─────────────────────────────────────── */
+.divider {
+  height: 1px; background: var(--border);
+  max-width: 1100px; margin: 0 auto;
+}
+.tools-section { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+.tools-section-header {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
-}
-.stat { text-align: center; }
-.stat-num { font-size: 2rem; font-weight: 900; color: var(--text); line-height: 1; }
-.stat-num .unit { font-size: 1rem; color: var(--muted); font-weight: 500; }
-.stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
-
-/* FILTER */
-.filter-row {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.filter-btn {
-  padding: 0.45rem 1.1rem;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--muted);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.filter-btn:hover { border-color: var(--muted); color: var(--text); }
-.filter-btn.active { border-color: var(--global); background: var(--global-bg); color: var(--global); }
-.filter-btn.active-india { border-color: var(--india); background: var(--india-bg); color: var(--india); }
-
-/* MAIN */
-.main { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
-
-/* SECTION HEADER */
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
 }
 .section-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.9rem;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.3rem 0.85rem; border-radius: 6px;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em;
 }
 .badge-india { background: var(--india-bg); border: 1px solid var(--india-border); color: var(--india); }
-.badge-global { background: var(--global-bg); border: 1px solid var(--global-border); color: var(--global); }
-.badge-coming { background: rgba(139,148,158,0.1); border: 1px solid var(--border); color: var(--muted); }
-.section-title { font-size: 1.2rem; font-weight: 700; color: var(--text); }
-.section-count { margin-left: auto; font-size: 0.82rem; color: var(--muted); }
+.badge-global { background: var(--blue-bg); border: 1px solid var(--blue-border); color: var(--blue); }
+.section-count { margin-left: auto; font-size: 0.8rem; color: var(--muted); }
 
-/* TOOL GRID */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1rem;
-  margin-bottom: 3rem;
 }
-
-/* TOOL CARD */
 .tool-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.4rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  position: relative;
-  overflow: hidden;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.4rem;
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
 }
-.tool-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--stripe-color, transparent);
-  transition: opacity 0.2s;
+.tool-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--card-top, transparent);
 }
-.tool-card.india-card::before { background: linear-gradient(90deg, var(--india), #FF6B35); }
-.tool-card.global-card::before { background: linear-gradient(90deg, var(--global), #A371F7); }
-.tool-card:hover { background: var(--card-hover); border-color: var(--hover-border, #58A6FF); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-.tool-card.india-card:hover { border-color: var(--india); }
-.tool-card.global-card:hover { border-color: var(--global); }
+.tool-card.india::after { background: linear-gradient(90deg, var(--india), #f97316); }
+.tool-card.global::after { background: linear-gradient(90deg, var(--blue), #a78bfa); }
+.tool-card:hover { border-color: var(--border2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.4); }
+.tool-card.india:hover { border-color: rgba(255,153,51,0.4); }
+.tool-card.global:hover { border-color: rgba(96,165,250,0.4); }
 
-.card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.85rem; }
-.card-icon { font-size: 2rem; line-height: 1; }
-.live-badge {
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
+.card-icon { font-size: 1.8rem; }
+.live-pill {
   display: inline-flex; align-items: center; gap: 0.3rem;
-  background: rgba(63,185,80,0.12); border: 1px solid rgba(63,185,80,0.3);
-  color: var(--green); font-size: 0.72rem; font-weight: 700;
-  padding: 0.2rem 0.6rem; border-radius: 20px; letter-spacing: 0.04em;
+  background: var(--green-bg); border: 1px solid var(--green-border);
+  color: var(--green); font-size: 0.7rem; font-weight: 700;
+  padding: 0.18rem 0.55rem; border-radius: 20px; letter-spacing: 0.04em;
 }
-.live-badge::before { content: '●'; font-size: 0.55rem; }
+.live-pill::before { content: '●'; font-size: 0.5rem; }
 
-.card-name { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem; }
-.card-tagline { font-size: 0.83rem; color: var(--muted); line-height: 1.5; flex: 1; }
+.card-name { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+.card-tagline { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem; flex: 1; }
+
+.card-meta {
+  background: var(--surface2); border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem; margin-bottom: 0.9rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+}
+.meta-item { }
+.meta-key { font-size: 0.68rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.15rem; }
+.meta-val { font-size: 0.82rem; font-weight: 700; color: var(--text2); }
+.meta-val.green { color: var(--green); }
+.meta-val.gold { color: var(--gold); }
 
 .card-footer {
   display: flex; align-items: center; justify-content: space-between;
-  margin-top: 1.1rem; padding-top: 0.85rem; border-top: 1px solid var(--border);
+  padding-top: 0.85rem; border-top: 1px solid var(--border);
 }
-.card-exit { font-size: 0.75rem; color: var(--gold); font-weight: 600; }
-.card-arrow {
-  width: 28px; height: 28px; border-radius: 6px;
-  background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.85rem; color: var(--global); transition: all 0.2s;
+.exit-range { font-size: 0.82rem; font-weight: 800; color: var(--gold); }
+.view-btn {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: var(--surface3); border: 1px solid var(--border2);
+  color: var(--text2); font-size: 0.78rem; font-weight: 600;
+  padding: 0.3rem 0.7rem; border-radius: var(--radius-sm);
+  transition: all 0.2s; text-decoration: none;
 }
-.tool-card.india-card .card-arrow { background: rgba(255,153,51,0.1); border-color: rgba(255,153,51,0.2); color: var(--india); }
-.tool-card:hover .card-arrow { transform: translateX(3px); }
+.view-btn:hover { background: var(--border2); color: var(--text); }
 
-/* COMING SOON CARD */
-.tool-card.coming {
-  opacity: 0.5;
-  cursor: default;
+/* ── BUNDLE CTA ────────────────────────────────────── */
+.bundle-box {
+  background: var(--surface); border: 1px solid var(--green-border);
+  border-radius: var(--radius); padding: 3rem 2rem; text-align: center;
+  position: relative; overflow: hidden;
+}
+.bundle-box::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 600px 300px at 50% 0%, rgba(34,197,94,0.06), transparent);
   pointer-events: none;
 }
-.tool-card.coming::before { background: linear-gradient(90deg, #30363D, #21262D); }
-.tool-card.coming:hover { transform: none; box-shadow: none; }
-.soon-badge {
-  display: inline-flex; align-items: center;
-  background: rgba(139,148,158,0.12); border: 1px solid var(--border);
-  color: var(--muted); font-size: 0.72rem; font-weight: 700;
-  padding: 0.2rem 0.6rem; border-radius: 20px;
+.bundle-tag {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--gold-bg); border: 1px solid var(--gold-border);
+  color: var(--gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.07em;
+  text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px;
+  margin-bottom: 1.25rem;
 }
+.bundle-box h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900;
+  letter-spacing: -0.5px; margin-bottom: 0.75rem;
+}
+.bundle-box p { font-size: 1rem; color: var(--text2); max-width: 520px; margin: 0 auto 2rem; line-height: 1.65; }
+.bundle-value {
+  display: inline-flex; align-items: baseline; gap: 0.5rem;
+  background: var(--surface2); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+.bv-label { font-size: 0.82rem; color: var(--muted); }
+.bv-num { font-size: 2rem; font-weight: 900; color: var(--green); }
+.bundle-perks {
+  display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 2rem; font-size: 0.85rem; color: var(--text2);
+}
+.bundle-perks span::before { content: '✓ '; color: var(--green); font-weight: 700; }
 
-/* PROGRESS BAR */
-.progress-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+/* ── CONTACT BLOCK ─────────────────────────────────── */
+.contact-bar {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 2rem; display: flex;
+  align-items: center; gap: 1.5rem; flex-wrap: wrap;
+}
+.contact-bar-text { flex: 1; min-width: 260px; }
+.contact-bar-text h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; }
+.contact-bar-text p { font-size: 0.88rem; color: var(--muted); }
+.contact-email {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--green); color: #000; font-weight: 700; font-size: 0.9rem;
+  padding: 0.7rem 1.5rem; border-radius: var(--radius-sm);
+  transition: opacity 0.2s;
+}
+.contact-email:hover { opacity: 0.88; }
+
+/* ── TRUST BAR ─────────────────────────────────────── */
+.trust-bar {
+  background: var(--surface); border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   padding: 1.5rem;
-  margin-bottom: 3rem;
+  display: flex; align-items: center; justify-content: center;
+  gap: 2.5rem; flex-wrap: wrap;
 }
-.progress-label { display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.85rem; }
-.progress-label span { color: var(--muted); }
-.progress-label strong { color: var(--text); }
-.progress-bar { height: 8px; background: #21262D; border-radius: 4px; overflow: hidden; }
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--india) 0%, var(--global) 100%);
-  border-radius: 4px;
-  width: 100%; /* 20/20 */
-  transition: width 0.8s ease;
-}
-.progress-milestones {
-  display: flex; justify-content: space-between; margin-top: 0.5rem;
-  font-size: 0.72rem; color: var(--muted);
-}
+.trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--muted); }
+.trust-item strong { color: var(--text2); }
 
-/* FOOTER */
+/* ── FOOTER ────────────────────────────────────────── */
 footer {
-  border-top: 1px solid var(--border);
-  padding: 1.5rem;
-  text-align: center;
-  font-size: 0.82rem;
-  color: var(--muted);
+  border-top: 1px solid var(--border); padding: 2rem 1.5rem;
+  text-align: center; font-size: 0.82rem; color: var(--muted);
 }
-footer a { color: var(--global); text-decoration: none; }
+footer a { color: var(--blue); }
 footer a:hover { text-decoration: underline; }
 
-/* HIDDEN */
+/* ── FILTER TABS ───────────────────────────────────── */
+.filter-row {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.ftab {
+  padding: 0.4rem 1rem; border-radius: 6px; border: 1px solid var(--border);
+  background: transparent; color: var(--muted); font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all 0.15s;
+}
+.ftab:hover { color: var(--text); border-color: var(--border2); }
+.ftab.active { background: var(--blue-bg); border-color: var(--blue-border); color: var(--blue); }
+.ftab.active-india { background: var(--india-bg); border-color: var(--india-border); color: var(--india); }
+
 .hidden { display: none !important; }
 
-@media (max-width: 640px) {
-  .stats-row { gap: 1.25rem; }
-  .stat-num { font-size: 1.5rem; }
+@media (max-width: 680px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .tools-grid { grid-template-columns: 1fr; }
-  .section-header { flex-wrap: wrap; }
+  .math-row { flex-direction: column; gap: 0.2rem; }
+  .math-row .label { min-width: auto; }
+  .contact-bar { flex-direction: column; text-align: center; }
+  nav .nav-links { display: none; }
 }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-tag">🌾 Web Tool Farm</div>
-  <h1>20 <span class="accent-india">No-API</span> Tools<br>Built to <span class="accent">Rank & Flip</span></h1>
-  <p class="hero-sub">Pure HTML + Vanilla JS. Each tool targets a high-volume search query, runs on Vercel for free, and is priced to flip on Flippa at $3k–$30k.</p>
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">Web Tool <span>Farm</span></div>
+  <div class="nav-links">
+    <a href="#tools">Browse Tools</a>
+    <a href="#math">The Math</a>
+    <a href="#bundle">Bundle Deal</a>
+    <a href="#contact">Make an Offer</a>
+  </div>
+  <a class="nav-cta" href="#contact">Contact Seller →</a>
+</nav>
 
-  <div class="stats-row">
-    <div class="stat">
-      <div class="stat-num">19</div>
-      <div class="stat-label">Tools Live</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">8</div>
-      <div class="stat-label">Coming Soon</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">$<span style="color:var(--text)">3</span><span class="unit">k–</span>$<span style="color:var(--text)">30</span><span class="unit">k</span></div>
-      <div class="stat-label">Exit per Tool</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">~$<span style="color:var(--text)">0</span></div>
-      <div class="stat-label">Monthly Hosting</div>
-    </div>
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-eyebrow">📦 Portfolio of 20 Live Tools</div>
+  <h1>Turn Search Traffic<br>Into <span class="g">Recurring Revenue</span>.<br>Assets Included.</h1>
+  <p class="hero-sub">20 SEO-optimised web tools targeting high-volume queries — already live, $0/month to host, no APIs to maintain. Buy one or buy all.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#tools">Browse All 20 Tools</a>
+    <a class="btn-secondary" href="#math">See Exit Math</a>
   </div>
 
-  <div class="filter-row">
-    <button class="filter-btn active" onclick="filter('all', this)">All Tools</button>
-    <button class="filter-btn" onclick="filter('india', this)">🇮🇳 India-Focused</button>
-    <button class="filter-btn" onclick="filter('global', this)">🌍 Global</button>
-    <button class="filter-btn" onclick="filter('coming', this)">⏳ Coming Soon</button>
+  <div class="stats-grid">
+    <div class="stat-cell">
+      <div class="stat-num green">20</div>
+      <div class="stat-label">Tools Live</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num gold">$200k<span style="font-size:1.2rem;font-weight:600;color:var(--muted)">+</span></div>
+      <div class="stat-label">Total Portfolio Exit (est.)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num blue">600k<span style="font-size:1.2rem;font-weight:600;color:var(--muted)">/mo</span></div>
+      <div class="stat-label">Combined Keyword Searches</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num green">$0</div>
+      <div class="stat-label">Monthly Hosting Cost</div>
+    </div>
   </div>
 </div>
 
-<div class="main">
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item">🔧 <span><strong>Pure HTML + Vanilla JS</strong> — nothing to break</span></div>
+  <div class="trust-item">☁️ <span><strong>Vercel free tier</strong> — no hosting bill ever</span></div>
+  <div class="trust-item">🔗 <span><strong>Zero external APIs</strong> — no rate limits, no keys</span></div>
+  <div class="trust-item">📈 <span><strong>SEO-ready day one</strong> — schema, sitemap, canonical, OG</span></div>
+  <div class="trust-item">🏦 <span><strong>30–40× MRR</strong> — standard Flippa multiple</span></div>
+</div>
 
-  <!-- PROGRESS -->
-  <div class="progress-section">
-    <div class="progress-label">
-      <span>Build Progress</span>
-      <strong>20 / 20 tools live ✓</strong>
+<!-- ── WHY THESE TOOLS ── -->
+<div class="section" id="moat">
+  <div class="section-label">Why Buy</div>
+  <h2 class="section-heading">Built for SEO.<br>Priced to <span class="g">Flip Fast</span>.</h2>
+  <p class="section-body">These aren't weekend hacks. Every tool was built with on-page SEO, JSON-LD schema markup, FAQPage structured data, and a genuine moat baked in. Here's why they hold value.</p>
+
+  <div class="moat-grid">
+    <div class="moat-card">
+      <div class="moat-icon">🏗️</div>
+      <div class="moat-title">Zero Infrastructure Risk</div>
+      <div class="moat-desc">No databases, no servers, no API rate limits. Pure client-side logic means nothing can go down except Vercel — and Vercel's free tier has 99.99% uptime.</div>
     </div>
-    <div class="progress-bar"><div class="progress-fill"></div></div>
-    <div class="progress-milestones">
-      <span>Start</span><span>5 tools</span><span>10 tools ✓</span><span>15 tools</span><span>20 tools</span>
+    <div class="moat-card">
+      <div class="moat-icon">📐</div>
+      <div class="moat-title">Schema Markup on Every Page</div>
+      <div class="moat-desc">Each tool ships with WebApplication, FAQPage (6+ Q&As), BreadcrumbList, and HowTo structured data. Google rich results from day one.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon">🇮🇳</div>
+      <div class="moat-title">India Segment is Underserved</div>
+      <div class="moat-desc">10 tools built specifically for Indian search intent — university CGPA systems, city-level stamp duty, ICMR nutrition data, MCA company registry. No direct English-language competitor covers this niche.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon">🔁</div>
+      <div class="moat-title">Repeat-Visit Mechanics</div>
+      <div class="moat-desc">Template saves (localStorage), shareable URL hashes, and progressive form states mean users bookmark and return — boosting session metrics that buyers and ad networks care about.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon">💸</div>
+      <div class="moat-title">AdSense-Ready Layouts</div>
+      <div class="moat-desc">Clean sidebar and in-feed slots already designed in. Drop in one AdSense script tag and start monetising the same day you take over.</div>
+    </div>
+    <div class="moat-card">
+      <div class="moat-icon">🎯</div>
+      <div class="moat-title">Long-Tail Keyword Depth</div>
+      <div class="moat-desc">Each tool targets a primary keyword with 8K–165K monthly searches, plus 20+ related long-tail variants baked into FAQ schema and H2/H3 structure.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── EXIT MATH ── -->
+<div class="section-sm" id="math">
+  <div class="section-label">The Numbers</div>
+  <h2 class="section-heading" style="margin-bottom:1.5rem">One Tool. <span class="go">The Exit Math.</span></h2>
+
+  <div class="math-box">
+    <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-bottom:1rem;">Example: FIRE Calculator — 40K monthly searches for "fire calculator"</div>
+    <div class="math-row">
+      <span class="label">Primary keyword monthly searches</span>
+      <span class="value">40,000</span>
+    </div>
+    <div class="math-row">
+      <span class="label">Conservative organic CTR (3%)</span>
+      <span class="value">1,200 monthly visitors</span>
+    </div>
+    <div class="math-row">
+      <span class="label">AdSense RPM (finance niche)</span>
+      <span class="value">$4–$8 per 1,000 sessions</span>
+    </div>
+    <div class="math-row">
+      <span class="label">Estimated monthly AdSense revenue</span>
+      <span class="value gold">$5–$10/month (conservative)</span>
+      <span class="math-eq">→ grows with SEO over 6–12 months</span>
+    </div>
+    <div class="math-row">
+      <span class="label">At 3,000 visitors/month (achievable in 6 months)</span>
+      <span class="value gold">$12–$24/month</span>
+    </div>
+    <div class="math-row">
+      <span class="label">Flippa exit at 30–40× MRR ($20/mo)</span>
+      <span class="value green">$600–$800</span>
+    </div>
+    <div class="math-row">
+      <span class="label">Flippa exit at 30–40× MRR ($150/mo — scaled)</span>
+      <span class="value green">$4,500–$6,000</span>
+    </div>
+    <div class="math-row">
+      <span class="label">Add affiliate links (Personal Finance SaaS)</span>
+      <span class="value green">+$100–$400/month additional</span>
+    </div>
+    <div class="math-row">
+      <span class="label">Total portfolio across 20 tools at scale</span>
+      <span class="value green" style="font-size:1.3rem;">$60k – $200k+ exit</span>
     </div>
   </div>
 
-  <!-- INDIA SECTION -->
-  <div id="section-india" class="section-group">
-    <div class="section-header">
+  <p style="margin-top:1rem;font-size:0.82rem;color:var(--muted);">Estimates are conservative. Finance, legal, and health niches command $8–$15 RPM on AdSense. India-focused tools benefit from rapidly growing Indian ad spend with lower competition.</p>
+</div>
+
+<!-- ── TOOLS ── -->
+<div id="tools" style="padding-top:2rem;">
+  <div class="tools-section">
+    <div class="section-label" style="margin-bottom:1.25rem">Full Catalogue</div>
+    <h2 class="section-heading" style="margin-bottom:0.5rem">20 Tools. Every One <span class="g">Live Right Now.</span></h2>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:2rem;">Click any tool to open it in a new tab. All tools are fully functional and SEO-indexed.</p>
+
+    <div class="filter-row">
+      <button class="ftab active" onclick="filt('all',this)">All 20</button>
+      <button class="ftab" onclick="filt('india',this)">🇮🇳 India-Focused (10)</button>
+      <button class="ftab" onclick="filt('global',this)">🌍 Global (10)</button>
+    </div>
+  </div>
+
+  <!-- INDIA TOOLS -->
+  <div class="tools-section" id="grp-india">
+    <div class="tools-section-header">
       <span class="section-badge badge-india">🇮🇳 India-Focused</span>
-      <span class="section-title">High-volume Indian search queries</span>
-      <span class="section-count">10 live</span>
+      <span style="font-size:0.95rem;font-weight:600;color:var(--text2);">High-volume Indian search queries — underserved in English</span>
+      <span class="section-count">10 tools live</span>
     </div>
     <div class="tools-grid">
 
-      <a class="tool-card india-card" href="https://indian-food-nutrition.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">🍛</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://indian-food-nutrition.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🍛</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Indian Food Nutrition Calculator</div>
-        <div class="card-tagline">Calorie & macro tracker built for 155+ Indian dishes — dal, biryani, idli with ICMR data.</div>
+        <div class="card-tagline">Calorie & macro tracker for 155+ Indian dishes using ICMR data — dal, biryani, idli, dosa and more.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">indian food calorie counter</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">27,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">ICMR data, 155 dishes</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Health — $4–$8</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $5k–$15k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $5k – $15k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card india-card" href="https://cgpa-converter-six.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">🎓</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://cgpa-converter-six.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🎓</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">CGPA to Percentage Converter</div>
-        <div class="card-tagline">University-specific CGPA converter covering 80+ Indian universities including VTU, Anna, Mumbai.</div>
+        <div class="card-tagline">University-specific converter covering 80+ Indian universities — VTU, Anna, Mumbai, Pune and more.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">cgpa to percentage</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">165,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">80+ university formulas</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Education — $2–$5</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $3k–$8k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $3k – $8k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card india-card" href="https://indian-wedding-budget.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">💍</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://indian-wedding-budget.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">💍</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Indian Wedding Budget Planner</div>
-        <div class="card-tagline">Plan wedding budget with North/South/West/East benchmarks, ceremony checklist & donut chart.</div>
+        <div class="card-tagline">Plan weddings with North/South/West/East regional benchmarks, ceremony checklist, and cost donut chart.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">wedding budget india</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">18,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Regional cost benchmarks</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Events — $3–$6</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $5k–$12k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $5k – $12k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card india-card" href="https://freelancer-tax-calc-omega.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">🧾</div><span class="live-badge">LIVE</span></div>
-        <div class="card-name">Freelancer Tax Calculator</div>
-        <div class="card-tagline">GST (18%), TDS (10%), advance tax for Indian freelancers. Enter take-home → get invoice amount.</div>
+      <a class="tool-card india" href="https://freelancer-tax-calc-omega.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🧾</div><span class="live-pill">LIVE</span></div>
+        <div class="card-name">Freelancer Tax Calculator (India)</div>
+        <div class="card-tagline">GST (18%) + TDS (10%) + advance tax all in one. Enter take-home target → get the invoice amount.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">freelance tax india</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">9,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">GST+TDS+advance tax combo</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Finance — $5–$12</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $4k–$10k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $4k – $10k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card india-card" href="https://bio-formatter.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">✍️</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://bio-formatter.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">✍️</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Instagram & LinkedIn Bio Formatter</div>
-        <div class="card-tagline">Format bios with working line breaks. Live mobile preview, emoji picker, character counter.</div>
+        <div class="card-tagline">Format bios with working line breaks — Instagram strips them if copy-pasted wrong. Live mobile preview.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">instagram bio line break</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">33,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Real line-break workaround</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Social — $2–$5</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $4k–$12k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $4k – $12k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card india-card" href="https://wcag-checker-mauve.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">♿</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://wcag-checker-mauve.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">♿</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">WCAG Accessibility Checker</div>
-        <div class="card-tagline">Paste HTML → instant WCAG 2.1 AA audit. 10 checks, accessibility score 0–100, code fixes.</div>
+        <div class="card-tagline">Paste HTML → instant WCAG 2.1 AA audit. 10 checks, accessibility score 0–100, and code-level fixes.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">wcag accessibility checker</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">12,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Free instant audit + fixes</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Dev/B2B — $8–$15</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $8k–$25k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $8k – $25k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card india-card" href="https://rent-vs-buy-ten.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">🏙️</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://rent-vs-buy-ten.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🏙️</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Rent vs Buy Calculator (India)</div>
-        <div class="card-tagline">City-specific break-even calculator with stamp duty, registration, EMI vs rent comparison chart.</div>
-        <div class="card-footer"><span class="card-exit">Exit: $6k–$18k</span><span class="card-arrow">↗</span></div>
+        <div class="card-tagline">City-specific break-even calculator with stamp duty, registration fees, EMI vs rent comparison chart.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">rent vs buy india</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">22,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">City stamp duty data</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Real Estate — $6–$14</div></div>
+        </div>
+        <div class="card-footer">
+          <span class="exit-range">Exit: $6k – $18k</span>
+          <span class="view-btn">View Live ↗</span>
+        </div>
       </a>
 
-      <a class="tool-card india-card" href="https://skincare-checker.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">💄</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://skincare-checker.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">💄</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Skincare Ingredient Checker</div>
-        <div class="card-tagline">Enter 2–5 skincare ingredients — see compatibility matrix, irritation warnings & safe AM/PM routine builder.</div>
-        <div class="card-footer"><span class="card-exit">Exit: $6k–$20k</span><span class="card-arrow">↗</span></div>
+        <div class="card-tagline">Enter 2–5 skincare ingredients → compatibility matrix, irritation warnings, and safe AM/PM routine builder.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">skincare ingredient checker</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">40,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Compatibility matrix table</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Beauty — $4–$9</div></div>
+        </div>
+        <div class="card-footer">
+          <span class="exit-range">Exit: $6k – $20k</span>
+          <span class="view-btn">View Live ↗</span>
+        </div>
       </a>
 
-      <a class="tool-card india-card" href="https://brand-name-checker.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">🔍</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://brand-name-checker.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🔍</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Brand Name Checker (India)</div>
-        <div class="card-tagline">Check .com / .in / .co.in domain availability via DNS, plus Instagram, Twitter/X & MCA company registry links.</div>
-        <div class="card-footer"><span class="card-exit">Exit: $4k–$10k</span><span class="card-arrow">↗</span></div>
+        <div class="card-tagline">DNS check for .com/.in/.co.in domain availability plus Instagram, Twitter/X & MCA company registry deep-links.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">brand name checker india</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">14,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">.in domain + MCA link</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Business — $5–$10</div></div>
+        </div>
+        <div class="card-footer">
+          <span class="exit-range">Exit: $4k – $10k</span>
+          <span class="view-btn">View Live ↗</span>
+        </div>
       </a>
 
-      <a class="tool-card india-card" href="https://salary-negotiation-psi.vercel.app" target="_blank" rel="noopener" data-cat="india">
-        <div class="card-top"><div class="card-icon">💼</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card india" href="https://salary-negotiation-psi.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">💼</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Salary Negotiation Script Builder</div>
-        <div class="card-tagline">Enter CTC + offer + target → get 3 word-for-word scripts (assertive, collaborative, email) with market benchmark.</div>
-        <div class="card-footer"><span class="card-exit">Exit: $4k–$10k</span><span class="card-arrow">↗</span></div>
+        <div class="card-tagline">Enter CTC + offer + target → 3 word-for-word negotiation scripts (assertive, collaborative, email) with benchmarks.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">salary negotiation script</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">18,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Word-for-word scripts</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Career — $4–$8</div></div>
+        </div>
+        <div class="card-footer">
+          <span class="exit-range">Exit: $4k – $10k</span>
+          <span class="view-btn">View Live ↗</span>
+        </div>
       </a>
 
     </div>
   </div>
 
-  <!-- GLOBAL SECTION -->
-  <div id="section-global" class="section-group">
-    <div class="section-header">
+  <!-- GLOBAL TOOLS -->
+  <div class="tools-section" id="grp-global">
+    <div class="tools-section-header">
       <span class="section-badge badge-global">🌍 Global</span>
-      <span class="section-title">Universal tools targeting worldwide search</span>
-      <span class="section-count">10 live</span>
+      <span style="font-size:0.95rem;font-weight:600;color:var(--text2);">Universal tools targeting worldwide search traffic</span>
+      <span class="section-count">10 tools live</span>
     </div>
     <div class="tools-grid">
 
-      <a class="tool-card global-card" href="https://meeting-cost-clock-tau.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">⏱️</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://meeting-cost-clock-tau.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">⏱️</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Meeting Cost Clock</div>
-        <div class="card-tagline">See the real dollar cost of your meeting ticking up live. Shareable result card — the viral mechanic.</div>
+        <div class="card-tagline">Dollar cost of the meeting ticking up live on screen. Shareable result card drives organic social sharing.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">meeting cost calculator</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">12,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Live counter + viral share</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">B2B/Productivity — $6–$12</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $5k–$15k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $5k – $15k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://sleep-debt-calc-five.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">😴</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://sleep-debt-calc-five.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">😴</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Sleep Debt Calculator</div>
-        <div class="card-tagline">How much sleep do you owe your body? 7-day tracker with recovery plan & 90-min cycle calculator.</div>
+        <div class="card-tagline">How much sleep do you owe your body? 7-day tracker with recovery plan and 90-minute sleep cycle calculator.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">sleep debt calculator</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">22,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">7-day tracker + recovery</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Health — $4–$9</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $5k–$15k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $5k – $15k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://fire-calculator-ashy-nine.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">🔥</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://fire-calculator-ashy-nine.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🔥</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">FIRE Calculator</div>
-        <div class="card-tagline">How many years until financial independence? Savings rate → years to freedom with portfolio chart.</div>
+        <div class="card-tagline">Savings rate → exact years to financial independence, with interactive portfolio chart and withdrawal projections.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">fire calculator</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">40,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Savings rate → years chart</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Finance — $8–$16</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $8k–$25k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $8k – $25k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://lease-scanner-three.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">🏠</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://lease-scanner-three.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🏠</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Lease Red Flag Scanner</div>
-        <div class="card-tagline">Paste your lease → instant plain-English report of every clause that could hurt you. 40+ red flags.</div>
+        <div class="card-tagline">Paste your lease → instant plain-English report flagging every clause that could hurt you. 40+ patterns.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">lease red flag checker</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">8,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">40+ clause pattern library</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Legal/RE — $8–$15</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $8k–$25k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $8k – $25k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://headline-scorer.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">📰</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://headline-scorer.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">📰</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Headline Scorer</div>
-        <div class="card-tagline">Score any headline 0–100. Power words, numbers, emotional triggers, length — with rewrite suggestions.</div>
+        <div class="card-tagline">Score any headline 0–100. Power words, numbers, emotional triggers, optimal length — with rewrite suggestions.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">headline analyzer</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">30,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">0–100 score + rewrites</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Content/Marketing — $5–$10</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $6k–$18k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $6k – $18k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://startup-runway-ten.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">🚀</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://startup-runway-ten.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🚀</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Startup Runway Calculator</div>
-        <div class="card-tagline">Cash + burn + MRR growth → exact runway, break-even date, 24-month chart & fundraising amount.</div>
+        <div class="card-tagline">Cash + burn rate + MRR growth → exact runway months, break-even date, 24-month projection chart.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">startup runway calculator</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">11,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">MRR growth + break-even</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">B2B/Finance — $8–$15</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $6k–$20k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $6k – $20k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://font-pairing-visualizer.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">🎨</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://font-pairing-visualizer.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🎨</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Font Pairing Visualizer</div>
-        <div class="card-tagline">Pick a heading font → instantly see 5 curated body pairings. Live preview, CSS snippet, dark mode.</div>
+        <div class="card-tagline">Pick any heading font → live preview of 5 curated pairings via Google Fonts. CSS snippet, contrast badges.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">font pairing</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">49,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Live Google Fonts preview</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Design — $4–$9</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $5k–$15k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $5k – $15k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://remote-team-overlap.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">🌐</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://remote-team-overlap.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🌐</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Remote Team Overlap Finder</div>
-        <div class="card-tagline">Add team timezones &amp; hours → colour-coded 24h grid, full overlap zone, top 3 meeting windows.</div>
+        <div class="card-tagline">Add timezones and working hours → colour-coded 24h overlap grid, top 3 meeting windows, shareable link.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">remote team timezone overlap</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">8,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">URL-shareable hash state</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">B2B — $6–$12</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $6k–$18k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $6k – $18k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://email-tone-checker.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">📧</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://email-tone-checker.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">📧</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Email Tone &amp; Length Checker</div>
-        <div class="card-tagline">Paste email draft → detect tone, flag filler phrases, passive voice, readability score &amp; specific fixes.</div>
+        <div class="card-tagline">Paste email draft → tone detection, filler phrase rewrites, passive voice counter, readability score.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">email tone checker</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">19,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">Specific phrase rewrites</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Productivity — $5–$10</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $6k–$18k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $6k – $18k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
-      <a class="tool-card global-card" href="https://podcast-show-notes-one.vercel.app" target="_blank" rel="noopener" data-cat="global">
-        <div class="card-top"><div class="card-icon">🎙️</div><span class="live-badge">LIVE</span></div>
+      <a class="tool-card global" href="https://podcast-show-notes-one.vercel.app" target="_blank" rel="noopener">
+        <div class="card-header"><div class="card-icon">🎙️</div><span class="live-pill">LIVE</span></div>
         <div class="card-name">Podcast Show Notes Formatter</div>
-        <div class="card-tagline">Fill 6 fields → get show notes in HTML, Markdown &amp; plain text simultaneously. WordPress, Substack, Spotify.</div>
+        <div class="card-tagline">Fill 6 fields → show notes in HTML, Markdown &amp; plain text simultaneously for WordPress, Substack, Spotify.</div>
+        <div class="card-meta">
+          <div class="meta-item"><div class="meta-key">Primary keyword</div><div class="meta-val">podcast show notes template</div></div>
+          <div class="meta-item"><div class="meta-key">Monthly searches</div><div class="meta-val green">14,000</div></div>
+          <div class="meta-item"><div class="meta-key">Moat</div><div class="meta-val">3 formats simultaneously</div></div>
+          <div class="meta-item"><div class="meta-key">Niche RPM</div><div class="meta-val">Creator/Media — $4–$8</div></div>
+        </div>
         <div class="card-footer">
-          <span class="card-exit">Exit: $4k–$12k</span>
-          <span class="card-arrow">↗</span>
+          <span class="exit-range">Exit: $4k – $12k</span>
+          <span class="view-btn">View Live ↗</span>
         </div>
       </a>
 
     </div>
   </div>
+</div>
 
-  <!-- ALL DONE -->
-  <div id="section-coming" class="section-group">
-    <div class="section-header">
-      <span class="section-badge badge-coming">🎉 Complete</span>
-      <span class="section-title">All 20 tools are live — portfolio complete!</span>
-      <span class="section-count">0 remaining</span>
+<!-- ── BUNDLE CTA ── -->
+<div class="section" id="bundle">
+  <div class="bundle-box">
+    <div class="bundle-tag">Best Value</div>
+    <h2>Buy the Entire Portfolio.<br>One Deal.</h2>
+    <p>Acquire all 20 live tools as a portfolio. Add AdSense, list on Flippa individually or as a bundle. The combined exit potential at scale is $60k–$200k+.</p>
+    <div class="bundle-value">
+      <span class="bv-label">Combined exit potential</span>
+      <span class="bv-num">$60k–$200k</span>
     </div>
-  </div>
-
-  <!-- FLIP STRATEGY -->
-  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:1rem;">
-    <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-bottom:1rem;">Exit Strategy</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
-      <div>
-        <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;">Where to list</div>
-        <div style="font-size:0.9rem;font-weight:600;color:var(--text);">Flippa · Acquire.com · Motion Invest</div>
-      </div>
-      <div>
-        <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;">Monetisation</div>
-        <div style="font-size:0.9rem;font-weight:600;color:var(--text);">Google AdSense + Affiliate links</div>
-      </div>
-      <div>
-        <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;">Listing multiplier</div>
-        <div style="font-size:0.9rem;font-weight:600;color:var(--text);">30–40× monthly revenue</div>
-      </div>
-      <div>
-        <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;">Hosting cost</div>
-        <div style="font-size:0.9rem;font-weight:600;color:var(--green);">~$0/mo (Vercel free tier)</div>
-      </div>
+    <div class="bundle-perks">
+      <span>All source code</span>
+      <span>All GitHub repos</span>
+      <span>All Vercel projects</span>
+      <span>All domains (Vercel subdomains)</span>
+      <span>Full SEO setup on every tool</span>
+      <span>Privacy + Terms pages included</span>
     </div>
+    <a class="btn-primary" href="mailto:somugowda8050@gmail.com?subject=Portfolio Bundle Inquiry — Web Tool Farm" style="font-size:1rem;padding:0.9rem 2rem;">Make an Offer → somugowda8050@gmail.com</a>
   </div>
+</div>
 
+<!-- ── CONTACT ── -->
+<div class="section-sm" id="contact">
+  <div class="contact-bar">
+    <div class="contact-bar-text">
+      <h3>Interested in a single tool?</h3>
+      <p>Send an email with which tool(s) you're interested in and your budget. Happy to provide traffic analytics, keyword ranking history, or answer any due-diligence questions.</p>
+    </div>
+    <a class="contact-email" href="mailto:somugowda8050@gmail.com?subject=Tool Inquiry — Web Tool Farm">
+      📩 somugowda8050@gmail.com
+    </a>
+  </div>
 </div>
 
 <footer>
-  Built with HTML + Vanilla JS · Deployed on Vercel · No external APIs
-  &nbsp;·&nbsp; <a href="https://github.com/somanath-goudar" target="_blank">GitHub</a>
+  <p>Web Tool Farm &mdash; 20 no-API static tools, hosted on Vercel · Built 2026 · <a href="https://github.com/somanath-goudar" target="_blank">GitHub @somanath-goudar</a></p>
 </footer>
 
 <script>
-function filter(cat, btn) {
-  // Update button states
-  document.querySelectorAll('.filter-btn').forEach(b => {
-    b.classList.remove('active', 'active-india');
-  });
-  if (cat === 'india') btn.classList.add('active-india');
-  else btn.classList.add('active');
+function filt(cat, btn) {
+  document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active','active-india'));
+  btn.classList.add(cat === 'india' ? 'active-india' : 'active');
 
-  const allCards = document.querySelectorAll('.tool-card');
-  const allGroups = document.querySelectorAll('.section-group');
-
+  const india = document.getElementById('grp-india');
+  const global = document.getElementById('grp-global');
   if (cat === 'all') {
-    allGroups.forEach(g => g.classList.remove('hidden'));
-    allCards.forEach(c => c.classList.remove('hidden'));
-    return;
+    india.classList.remove('hidden');
+    global.classList.remove('hidden');
+  } else if (cat === 'india') {
+    india.classList.remove('hidden');
+    global.classList.add('hidden');
+  } else {
+    india.classList.add('hidden');
+    global.classList.remove('hidden');
   }
-
-  allGroups.forEach(g => g.classList.add('hidden'));
-  const targetGroup = document.getElementById('section-' + (cat === 'coming' ? 'coming' : cat));
-  if (targetGroup) targetGroup.classList.remove('hidden');
 }
 </script>
 </body>
